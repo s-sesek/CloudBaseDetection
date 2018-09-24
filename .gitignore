@@ -3,9 +3,4 @@
 /data/tensorflow/models/research/deeplab/checkpoints/*
 /data/tensorflow/models/research/deeplab/vis_logdir/*
 /data/tensorflow/models/research/deeplab/eval_logdir/*
-/data/tensorflow/models/research/deeplab/.ipynb_checkpoints/*
-/data/tensorflow/models/research/deeplab/core/*
-/data/tensorflow/models/research/deeplab/utils/*
-/data/tensorflow/models/research/deeplab/datasets/*
-/data/tensorflow/models/research/deeplab/g3doc/*
-/data/tensorflow/models/research/deeplab/_*
+
