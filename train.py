@@ -20,7 +20,7 @@ from deeplab.datasets import segmentation_dataset
 from deeplab.utils import input_generator
 from deeplab.utils import train_utils
 from deployment import model_deploy
-from deeplab import scratch
+#from deeplab import scratch
 import matplotlib.pyplot as plt 
 from tensorflow.python.tools.inspect_checkpoint import print_tensors_in_checkpoint_file
 
@@ -170,7 +170,7 @@ def main(unused_argv):
   tf.gfile.MakeDirs(FLAGS.train_logdir)
   tf.logging.info('Training on %s set', FLAGS.train_split)
 
-  print_tensors_in_checkpoint_file(file_name='/data/tensorflow/models/research/deeplab/checkpoints/xception/model.ckpt', tensor_name='', all_tensor_names=True, all_tensors=False)
+  #print_tensors_in_checkpoint_file(file_name='/home/sarah/Documents/Repository/Could-Base-Detection/checkpoints/xception/model.ckpt', tensor_name='', all_tensor_names=True, all_tensors=False)
 
   with tf.Graph().as_default() as graph:
     with tf.device(config.inputs_device()):
@@ -181,7 +181,7 @@ def main(unused_argv):
           dataset_split=FLAGS.train_split,
           is_training=True,
           model_variant=FLAGS.model_variant)
-      print(samples)
+      #print(samples)
       
       
 

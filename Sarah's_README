@@ -78,9 +78,13 @@ Run train.py with “python3 /data/tensorflow/models/research/deeplab/train.py -
 
 Sample commands to run from the terminal:
 
-python3 /data/tensorflow/models/research/deeplab/train.py --train_logdir=/data/tensorflow/models/research/deeplab/logdir/ --tf_initial_checkpoint=/data/tensorflow/models/research/deeplab/checkpoints/deeplabv3_xception_ade20k_train/model.ckpt.index --dataset_dir=/data/scripts/LES_TSI/SmallData/tfrecord/
+python3 /home/sarah/Documents/Repository/Could-Base-Detection/train.py 
+--train_logdir=/home/sarah/Documents/Repository/Could-Base-Detection/logdir 
+--tf_initial_checkpoint=/home/sarah/Documents/Repository/Could-Base-Detection/checkpoints/xception_71/model.ckpt 
+--dataset_dir=/data/scripts/LES_TSI/SmallData/tfrecord/ &> outputfile.txt
 
-python3 /data/tensorflow/models/research/deeplab/eval.py --checkpoint_dir=/data/tensorflow/models/research/deeplab/logdir/ --eval_logdir=/data/tensorflow/models/research/deeplab/eval_logdir/ --dataset_dir=/data/scripts/LES_TSI/SmallData/tfrecord/
+
+python3 /home/sarah/Documents/Repository/Could-Base-Detection/eval.py --checkpoint_dir=/home/sarah/Documents/Repository/Could-Base-Detection/logdir/ --eval_logdir=/home/sarah/Documents/Repository/Could-Base-Detection/eval_logdir/ --dataset_dir=/data/scripts/LES_TSI/SmallData/tfrecord/
 
 python3 /data/scripts/LES_TSI/sarahvtf.py --Masked=False --video_directory=/data/Renders/wrf_microhh/20160611_old/28800/ --folder=28800
 
