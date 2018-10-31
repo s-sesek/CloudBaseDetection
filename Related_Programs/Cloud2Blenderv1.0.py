@@ -17,9 +17,9 @@ import os
 '''
 User Defined Options
 '''
-dset = '/data/wrf_microhh/20160611/' # setting the directory containing ql.nc
+dset = '/data/lasso/sims/20160611/' # setting the directory containing ql.nc
 timeindex =  8 # setting index time
-render_landing = '/home/nick/Desktop/Renders/wrf_microhh/20160611_old/'
+render_landing = '/data/lasso/sims/20160611/' #file output locatioon
 
 '''
 Source
@@ -178,8 +178,8 @@ for l in xcoords:
         camera.location.y = camera_loc[1]
         camera.location.z = camera_loc[2]
         
-        bpy.ops.anim.keyframe_insert(type = 'Location') # Creating keyframe
-
+        #bpy.ops.anim.keyframe_insert(type = 'Location') # Creating keyframe
+         #commented out, created unknown error
         
         print(frame, camera_loc)
         
@@ -214,8 +214,8 @@ for l in xcoords:
         camera.location.y = camera_loc[1]
         camera.location.z = camera_loc[2]
         
-        bpy.ops.anim.keyframe_insert(type = 'Location') # Creating keyframe
-
+        #bpy.ops.anim.keyframe_insert(type = 'Location') # Creating keyframe
+         #commented out, created unknown error
         
         print(frame, camera_loc)
         
