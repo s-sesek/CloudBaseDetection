@@ -14,11 +14,11 @@ See model.py for more details and usage.
 """
 import six
 import tensorflow as tf
-from deeplab import common
-from deeplab import model
-from deeplab.datasets import segmentation_dataset
-from deeplab.utils import input_generator
-from deeplab.utils import train_utils
+from CloudBaseDetection import common
+from CloudBaseDetection import model
+from CloudBaseDetection.datasets import segmentation_dataset
+from CloudBaseDetection.utils import input_generator
+from CloudBaseDetection.utils import train_utils
 from deployment import model_deploy
 #from deeplab import scratch
 import matplotlib.pyplot as plt 
@@ -287,7 +287,7 @@ def main(unused_argv):
     # Soft placement allows placing on CPU ops without GPU implementation.
     session_config = tf.ConfigProto(
         allow_soft_placement=False, log_device_placement=True) #change allow_soft_placement to false #also log_device_placement to true will prob have to change back
-    session_config.gpu_options.per_process_gpu_memory_fraction = 0.8 #change added line
+    session_config.gpu_options.per_process_gpu_memory_fraction = 0.7 #change added line
 
     # Start the training.
     slim.learning.train(

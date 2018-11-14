@@ -18,7 +18,7 @@ import numpy as np
 import tensorflow as tf
 
 from tensorflow.python.framework import errors
-from deeplab.core import preprocess_utils
+from CloudBaseDetection.core import preprocess_utils
 
 
 class PreprocessUtilsTest(tf.test.TestCase):

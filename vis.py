@@ -22,11 +22,11 @@ import os.path
 import time
 import numpy as np
 import tensorflow as tf
-from deeplab import common
-from deeplab import model
-from deeplab.datasets import segmentation_dataset
-from deeplab.utils import input_generator
-from deeplab.utils import save_annotation
+from CloudBaseDetection import common
+from CloudBaseDetection import model
+from CloudBaseDetection.datasets import segmentation_dataset
+from CloudBaseDetection.utils import input_generator
+from CloudBaseDetection.utils import save_annotation
 
 slim = tf.contrib.slim
 
@@ -38,9 +38,9 @@ flags.DEFINE_string('master', '', 'BNS name of the tensorflow server')
 
 # Settings for log directories.
 
-flags.DEFINE_string('vis_logdir', '/data/tensorflow/models/research/deeplab/vis_logdir/', 'Where to write the event logs.')
+flags.DEFINE_string('vis_logdir', None, 'Where to write the event logs.')
 
-flags.DEFINE_string('checkpoint_dir', '/data/tensorflow/models/research/deeplab/logdir/', 'Directory of model checkpoints.')
+flags.DEFINE_string('checkpoint_dir', None, 'Directory of model checkpoints.')
 
 # Settings for visualizing the model.
 

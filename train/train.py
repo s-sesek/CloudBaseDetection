@@ -15,12 +15,12 @@ See model.py for more details and usage.
 import six
 import os
 import tensorflow as tf
-from deeplab import common
-from deeplab import model
-# from deeplab.datasets import segmentation_dataset
-import segmentation_dataset
-from deeplab.utils import input_generator
-from deeplab.utils import train_utils
+from CloudBaseDetection import common
+from CloudBaseDetection import model
+from CloudBaseDetection.datasets import segmentation_dataset
+## import segmentation_dataset
+from CloudBaseDetection.utils import input_generator
+from CloudBaseDetection.utils import train_utils
 from deployment import model_deploy
 from tensorflow.python.tools.inspect_checkpoint import print_tensors_in_checkpoint_file
 from pathlib import Path
@@ -32,20 +32,20 @@ flags = tf.app.flags
 FLAGS = flags.FLAGS
 
 # Settings for fine-tuning the network.
-flags.DEFINE_string('tf_initial_checkpoint', 'model.ckpt-0', 'The initial checkpoint in tensorflow format.')
+flags.DEFINE_string('tf_initial_checkpoint', 'model.ckpt', 'The initial checkpoint in tensorflow format.')
 flags.DEFINE_string('train_logdir', 'logs', 'Where the checkpoint and logs are stored.')
 
 # Dataset settings.
 flags.DEFINE_string('dataset', 'clouds', 'Name of the segmentation dataset.')  # change
 flags.DEFINE_string('train_split', 'train', 'Which split of the dataset to be used for training')
-flags.DEFINE_string('dataset_dir', '../recordgenerator/tfRecords', 'Where the dataset reside.')
+flags.DEFINE_string('dataset_dir', '../recordgenerator/tfRecords', 'Where the dataset reside.') #''
 
 
 # Settings for multi-GPUs/multi-replicas training.
 flags.DEFINE_integer('num_clones', 1, 'Number of clones to deploy.')
 
 # If this is True, training will commence on the CPU
-flags.DEFINE_boolean('clone_on_cpu', True, 'Use CPUs to deploy clones.')
+flags.DEFINE_boolean('clone_on_cpu', False, 'Use CPUs to deploy clones.')  #make false for cumulus true for other computers
 flags.DEFINE_integer('num_replicas', 1, 'Number of worker replicas.')
 flags.DEFINE_integer('startup_delay_steps', 15, 'Number of training steps between replicas startup.')
 flags.DEFINE_integer('num_ps_tasks', 0, 'The number of parameter servers. If the value is 0, then the parameters are handled locally by the worker.')
@@ -180,9 +180,7 @@ def checkpointcheck():
 
 
 def main(unused_argv):
-
-    checkpointcheck()
-
+    
     tf.logging.set_verbosity(tf.logging.INFO)
 
     # Set up deployment (i.e., multi-GPUs and/or multi-replicas).
@@ -205,8 +203,11 @@ def main(unused_argv):
 
     tf.gfile.MakeDirs(FLAGS.train_logdir)
     tf.logging.info('Training on %s set', FLAGS.train_split)
+    
 
     checkpoint = FLAGS.train_logdir + "/" + FLAGS.tf_initial_checkpoint
+    
+    checkpointcheck()
     print_tensors_in_checkpoint_file(file_name=checkpoint,
                                      tensor_name='',
                                      all_tensor_names=True,

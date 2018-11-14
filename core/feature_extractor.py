@@ -17,8 +17,8 @@
 import functools
 import tensorflow as tf
 
-from deeplab.core import resnet_v1_beta
-from deeplab.core import xception
+from CloudBaseDetection.core import resnet_v1_beta
+from CloudBaseDetection.core import xception
 from tensorflow.contrib.slim.nets import resnet_utils
 from nets.mobilenet import mobilenet_v2
 

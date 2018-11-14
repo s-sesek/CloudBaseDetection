@@ -17,7 +17,7 @@
 
 import tensorflow as tf
 
-from deeplab import common
+from CloudBaseDetection import common
 
 
 class CommonTest(tf.test.TestCase):

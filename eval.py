@@ -20,10 +20,10 @@ See model.py for more details and usage.
 import math
 import six
 import tensorflow as tf
-from deeplab import common
-from deeplab import model
-from deeplab.datasets import segmentation_dataset
-from deeplab.utils import input_generator
+from CloudBaseDetection import common
+from CloudBaseDetection import model
+from CloudBaseDetection.datasets import segmentation_dataset
+from CloudBaseDetection.utils import input_generator
 
 slim = tf.contrib.slim
 
