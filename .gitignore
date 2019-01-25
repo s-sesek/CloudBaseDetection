@@ -1,6 +1,0 @@
-#comment
-/data/tensorflow/models/research/deeplab/logdir/*
-/data/tensorflow/models/research/deeplab/checkpoints/*
-/data/tensorflow/models/research/deeplab/vis_logdir/*
-/data/tensorflow/models/research/deeplab/eval_logdir/*
-
