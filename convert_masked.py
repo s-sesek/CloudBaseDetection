@@ -17,11 +17,13 @@ def main():
 
     for filename in os.listdir("./convert/filesToConvert"):
         if filename.endswith('.png'):
+
             print("Converting " + filename)
+
             img = cv2.imread("./convert/filesToConvert/" + filename)
             height, width, channels = img.shape
-            for x in range(0, height-1):
-                for y in range(0, width-1):
+            for x in range(0, height - 1):
+                for y in range(0, width - 1):
 
                     distance_white = calculate_distance_to_color(img[x][y], white)
                     distance_black = calculate_distance_to_color(img[x][y], black)
