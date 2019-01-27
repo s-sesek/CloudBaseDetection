@@ -11,9 +11,9 @@ def main():
     green = np.array([1, 231, 95])
 
     label_1 = np.array([1, 1, 1])
-    label_2 = np.array([2, 2, 2])
-    label_3 = np.array([3, 3, 3])
-    label_4 = np.array([4, 4, 4])
+    label_2 = np.array([50, 50, 50])
+    label_3 = np.array([100, 100, 100])
+    label_4 = np.array([150, 150, 150])
 
     for filename in os.listdir("./trainingdata/maskedimages"):
         if filename.endswith('.png'):
@@ -41,7 +41,8 @@ def main():
                     else:
                         convert_color(img[x][y], label_4)
 
-            cv2.imwrite("./trainingdata/groundtruthimages/" + filename, img)
+            gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            cv2.imwrite("./trainingdata/groundtruthimages/" + filename, gray_image)
 
 
 def calculate_distance_to_color(pixel, color):
