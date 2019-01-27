@@ -30,7 +30,7 @@ _IMAGE_FORMAT_MAP = {
 }
 
 
-_NUM_SHARDS = 4
+_NUM_SHARDS = 1
 
 
 def _convert_dataset(dataset_split):
@@ -70,7 +70,7 @@ def _convert_dataset(dataset_split):
         height, width = image_reader.read_image_dims(image_data)
 
         # Read the semantic segmentation annotation.
-        seg_filename = os.path.join( FLAGS.semantic_segmentation_folder, filenames[i] + '.' + FLAGS.label_format)
+        seg_filename = os.path.join(FLAGS.semantic_segmentation_folder, filenames[i] + '.' + FLAGS.label_format)
 
         seg_data = tf.gfile.FastGFile(seg_filename, 'rb').read()
 

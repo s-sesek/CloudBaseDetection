@@ -69,19 +69,19 @@ flags.DEFINE_float('base_learning_rate', .01, 'The base learning rate for model 
 flags.DEFINE_float('learning_rate_decay_factor', 0.1, 'The rate to decay the base learning rate.')
 flags.DEFINE_integer('learning_rate_decay_step', 2000, 'Decay the base learning rate at a fixed step.')
 flags.DEFINE_float('learning_power', 0.9, 'The power value used in the poly learning policy.')
-flags.DEFINE_integer('training_number_of_steps', 500, 'The number of steps used for training')
+flags.DEFINE_integer('training_number_of_steps', 20000, 'The number of steps used for training')
 flags.DEFINE_float('momentum', 0.9, 'The momentum value to use')
 
 # When fine_tune_batch_norm=True, use at least batch size larger than 12
 # (batch size more than 16 is better). Otherwise, one could use smaller batch
 # size and set fine_tune_batch_norm=False.
-flags.DEFINE_integer('train_batch_size', 8, 'The number of images in each batch during training.')
+flags.DEFINE_integer('train_batch_size', 4, 'The number of images in each batch during training.')
 
 
 # For weight_decay, use 0.00004 for MobileNet-V2 or Xcpetion model variants.
 # Use 0.0001 for ResNet model variants.
 flags.DEFINE_float('weight_decay', 0.00004, 'The value of the weight decay for training.')
-flags.DEFINE_multi_integer('train_crop_size', [224, 224], 'Image crop size [height, width] during training.')  # change
+flags.DEFINE_multi_integer('train_crop_size', [320, 240], 'Image crop size [height, width] during training.')  # change
 flags.DEFINE_float('last_layer_gradient_multiplier', 1.0, 'The gradient multiplier for last layers, which is used to boost the gradient of last layers if the value > 1.')
 flags.DEFINE_boolean('upsample_logits', True, 'Upsample logits during training.')
 

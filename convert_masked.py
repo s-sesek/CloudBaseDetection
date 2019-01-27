@@ -4,16 +4,17 @@ import numpy as np
 import os
 
 
+
 def main():
     white = np.array([231, 231, 231])
     gray = np.array([103, 103, 103])
     black = np.array([0, 0, 0])
     green = np.array([1, 231, 95])
 
-    label_1 = np.array([1, 1, 1])
-    label_2 = np.array([50, 50, 50])
-    label_3 = np.array([100, 100, 100])
-    label_4 = np.array([150, 150, 150])
+    label_background = np.array([0, 0, 0])
+    label_base = np.array([1, 1, 1])
+    label_side = np.array([2, 2, 2])
+    label_sky = np.array([3, 3, 3])
 
     for filename in os.listdir("./trainingdata/maskedimages"):
         if filename.endswith('.png'):
@@ -33,16 +34,17 @@ def main():
                     closest_color = min([distance_white, distance_black, distance_green, distance_gray])
 
                     if closest_color == distance_black:
-                        convert_color(img[x][y], label_1)
+                        convert_color(img[x][y], label_background)
                     elif closest_color == distance_green:
-                        convert_color(img[x][y], label_2)
+                        convert_color(img[x][y], label_base)
                     elif closest_color == distance_white:
-                        convert_color(img[x][y], label_3)
+                        convert_color(img[x][y], label_side)
                     else:
-                        convert_color(img[x][y], label_4)
+                        convert_color(img[x][y], label_sky)
 
             gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-            cv2.imwrite("./trainingdata/groundtruthimages/" + filename, gray_image)
+            replacemaskunderscore = str.replace(filename, "mask", "_")
+            cv2.imwrite("./trainingdata/groundtruthimages/" + replacemaskunderscore, gray_image)
 
 
 def calculate_distance_to_color(pixel, color):

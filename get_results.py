@@ -26,7 +26,7 @@ flags.DEFINE_string('checkpoint_dir', './checkpoints', 'Directory of model check
 # Settings for visualizing the model.
 flags.DEFINE_integer('vis_batch_size', 1, 'The number of images in each batch during evaluation.')
 
-flags.DEFINE_multi_integer('vis_crop_size', [224, 224], 'Crop size [height, width] for visualization.')
+flags.DEFINE_multi_integer('vis_crop_size', [320, 240], 'Crop size [height, width] for visualization.')
 
 flags.DEFINE_integer('eval_interval_secs', 60 * 5, 'How often (in seconds) to run evaluation.')
 
