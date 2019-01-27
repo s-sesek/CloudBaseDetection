@@ -10,7 +10,7 @@ FLAGS = tf.app.flags.FLAGS
 
 tf.app.flags.DEFINE_string('image_folder', './trainingdata/images', 'Folder containing images.')
 
-tf.app.flags.DEFINE_string('semantic_segmentation_folder', './trainingdata/maskedimages', 'Folder containing semantic segmentation annotations.')
+tf.app.flags.DEFINE_string('semantic_segmentation_folder', './trainingdata/groundtruthimages', 'Folder containing semantic segmentation annotations.')
 
 tf.app.flags.DEFINE_string('list_folder', './trainingdata/', 'Folder containing lists for training and validation')
 

@@ -15,12 +15,12 @@ def main():
     label_3 = np.array([3, 3, 3])
     label_4 = np.array([4, 4, 4])
 
-    for filename in os.listdir("./convert/filesToConvert"):
+    for filename in os.listdir("./trainingdata/maskedimages"):
         if filename.endswith('.png'):
 
             print("Converting " + filename)
 
-            img = cv2.imread("./convert/filesToConvert/" + filename)
+            img = cv2.imread("./trainingdata/maskedimages/" + filename)
             height, width, channels = img.shape
             for x in range(0, height - 1):
                 for y in range(0, width - 1):
@@ -41,7 +41,7 @@ def main():
                     else:
                         convert_color(img[x][y], label_4)
 
-            cv2.imwrite("./convert/convertedFiles/" + filename, img)
+            cv2.imwrite("./trainingdata/groundtruthimages/" + filename, img)
 
 
 def calculate_distance_to_color(pixel, color):
