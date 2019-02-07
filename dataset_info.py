@@ -37,7 +37,7 @@ _CLOUDS_INFORMATION = DatasetDescriptor(
         'val': 101,  # num of samples in images/validation #change
     },
     num_classes=4,
-    ignore_label=255, #this isnt a color
+    ignore_label=0, #this isnt a color
 )
 
 
