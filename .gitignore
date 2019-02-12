@@ -3,10 +3,9 @@
 /data/tensorflow/models/research/deeplab/checkpoints/*
 /data/tensorflow/models/research/deeplab/vis_logdir/*
 /data/tensorflow/models/research/deeplab/eval_logdir/*
-/home/sarah/Documents/Repository/CloudBaseDetection/train/logs/*
-/home/sarah/Documents/Repository/CloudBaseDetection/recordgenerator/validationImages/*
-/home/sarah/Documents/Repository/CloudBaseDetection/recordgenerator/validationAnnotations/*
-/home/sarah/Documents/Repository/CloudBaseDetection/recordgenerator/trainingImages/*
-/home/sarah/Documents/Repository/CloudBaseDetection/recordgenerator/trainingAnnotations/*
-/home/sarah/Documents/Repository/CloudBaseDetection/recordgenerator/tfRecords/*
-
+/home/sarah/Documents/Repository/CloudBaseDetection/tfRecords/*
+/home/sarah/Documents/Repository/CloudBaseDetection/__pycache__/*
+#/home/sarah/Documents/Repository/CloudBaseDetection/results/*
+#/home/sarah/Documents/Repository/CloudBaseDetection/core/__pycache__/*
+#/home/sarah/Documents/Repository/CloudBaseDetection/trainingdata/groundtruthimages/*
+/home/sarah/Documents/Repository/CloudBaseDetection/datasets/CloudsFolder/*
