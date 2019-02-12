@@ -7,5 +7,7 @@
 /home/sarah/Documents/Repository/CloudBaseDetection/__pycache__/*
 /home/sarah/Documents/Repository/CloudBaseDetection/results/*
 /home/sarah/Documents/Repository/CloudBaseDetection/core/__pycache__/*
+/home/sarah/Documents/Repository/CloudBaseDetection/datasets/__pycache__/*
+/home/sarah/Documents/Repository/CloudBaseDetection/utils/__pycache__/*
 /home/sarah/Documents/Repository/CloudBaseDetection/trainingdata/groundtruthimages/*
 /home/sarah/Documents/Repository/CloudBaseDetection/datasets/CloudsFolder/*
