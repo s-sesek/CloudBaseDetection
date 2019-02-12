@@ -5,7 +5,7 @@
 /data/tensorflow/models/research/deeplab/eval_logdir/*
 /home/sarah/Documents/Repository/CloudBaseDetection/tfRecords/*
 /home/sarah/Documents/Repository/CloudBaseDetection/__pycache__/*
-#/home/sarah/Documents/Repository/CloudBaseDetection/results/*
-#/home/sarah/Documents/Repository/CloudBaseDetection/core/__pycache__/*
-#/home/sarah/Documents/Repository/CloudBaseDetection/trainingdata/groundtruthimages/*
+/home/sarah/Documents/Repository/CloudBaseDetection/results/*
+/home/sarah/Documents/Repository/CloudBaseDetection/core/__pycache__/*
+/home/sarah/Documents/Repository/CloudBaseDetection/trainingdata/groundtruthimages/*
 /home/sarah/Documents/Repository/CloudBaseDetection/datasets/CloudsFolder/*
