@@ -69,7 +69,7 @@ flags.DEFINE_float('base_learning_rate', .0001, 'The base learning rate for mode
 flags.DEFINE_float('learning_rate_decay_factor', 0.1, 'The rate to decay the base learning rate.')
 flags.DEFINE_integer('learning_rate_decay_step', 2000, 'Decay the base learning rate at a fixed step.')
 flags.DEFINE_float('learning_power', 0.9, 'The power value used in the poly learning policy.')
-flags.DEFINE_integer('training_number_of_steps', 20000, 'The number of steps used for training')
+flags.DEFINE_integer('training_number_of_steps', 2000000, 'The number of steps used for training')
 flags.DEFINE_float('momentum', 0.9, 'The momentum value to use')
 
 # When fine_tune_batch_norm=True, use at least batch size larger than 12
